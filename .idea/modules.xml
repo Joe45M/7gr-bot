@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../7gr/.idea/7gr.iml" filepath="$PROJECT_DIR$/../7gr/.idea/7gr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/7gr-bot.iml" filepath="$PROJECT_DIR$/.idea/7gr-bot.iml" />
+    </modules>
+  </component>
+</project>
