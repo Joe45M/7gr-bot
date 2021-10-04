@@ -2,7 +2,7 @@ const axios = require('axios');
 const _ = require('lodash');
 
 async function getProfile(id, msg) {
-    let name = id.replace('_', ' ');
+    let name = id.replaceAll('_', ' ');
     let res;
 
     try {
@@ -21,16 +21,26 @@ async function getProfile(id, msg) {
                 {
                     name: 'Podiums',
                     value: res.data.podiumCount.toString(),
-                    inline: false,
+                    inline: true,
                 },
                 {
                     name: 'Poles',
                     value: res.data.poleCount.toString(),
-                    inline: false,
+                    inline: true,
                 },
                 {
                     name: 'Points',
-                    value: res.data.points,
+                    value: res.data.points.toString(),
+                    inline: true,
+                },
+                {
+                    name: 'Races',
+                    value: res.data.raceCount.toString(),
+                    inline: true,
+                },
+                {
+                    name: 'Wins',
+                    value: res.data.winCount.toString(),
                     inline: true,
                 },
             ],

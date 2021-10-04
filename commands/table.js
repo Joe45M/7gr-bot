@@ -12,8 +12,8 @@ async function getTable(id, msg) {
     let embed = {
         color: 0x0099ff,
         title: 'Table - click to view.',
-        url: `https://7gr.app/championship/${id}`,
-        description: 'Tabke information.',
+        url: `https://7gr.app/champ/${id}`,
+        description: 'Table information. Click the above link to view the full table.',
         fields: [
         ],
         timestamp: new Date(),
