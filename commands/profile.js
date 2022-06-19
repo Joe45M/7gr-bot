@@ -2,8 +2,10 @@ const axios = require('axios');
 const _ = require('lodash');
 
 async function getProfile(id, msg) {
-    let name = id.replaceAll('_', ' ');
+    // let name = id.replaceAll('_', ' ');
     let res;
+
+    let name = id.splice(2).join(' ');
 
     try {
         res = await axios.get(process.env.ENDPOINT +'/api/profile/' + name);
@@ -56,7 +58,7 @@ async function getProfile(id, msg) {
         console.log(err);
 
         if (err.response.status === 404) {
-            msg.reply('Profile does not exist.');
+            msg.reply('Profile does not exist. Instead of "_", use spaces.');
         }
     }
 

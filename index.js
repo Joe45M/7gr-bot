@@ -5,6 +5,7 @@ const _ = require('lodash');
 const { getTable } = require('./commands/table');
 const { getTables } = require('./commands/tables');
 const { getProfile } = require('./commands/profile');
+const {race} = require("./commands/race");
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] }); //create new client
 client.on('ready', () => {
@@ -19,7 +20,7 @@ client.on('message', async msg => {
     let str = msg.content.split(' ');
 
     if (str.length < 3) {
-        msg.reply('Incorrect command usage. Expected 3 operands, received ' + str.length);
+        // msg.reply('Incorrect command usage. Expected 3 operands, received ' + str.length);
     }
 
 
@@ -27,6 +28,10 @@ client.on('message', async msg => {
         cmd: str[1],
         param: str[2],
     };
+
+    if (command.cmd === 'profile') {
+        command.param = str;
+    }
 
 
     switch (command.cmd) {
@@ -38,6 +43,9 @@ client.on('message', async msg => {
             break;
         case 'tables':
             getTables(msg);
+            break;
+        case 'race':
+            race(msg);
             break;
     }
 });

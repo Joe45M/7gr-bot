@@ -3,6 +3,10 @@
     "axios": "^0.21.4",
     "discord.js": "^13.1.0",
     "dotenv": "^10.0.0",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "node": "16.6.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
   }
 }
